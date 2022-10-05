@@ -11,16 +11,85 @@
     <!--google's Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Rubik:ital@1&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <title>Dice game</title>
   </head>
   <body>
+    <button class="newGame">
+      <span class="material-symbols-rounded"> add_circle </span>NEW GAME
+    </button>
 
-
-
+    <div class="container-fluid g-0 h-100">
+      <div class="row">
+        <div class="playerOneSide col-md-6">
+          <div class="topPart">
+            <h2 class="playerOne">PLAYER 1</h2>
+            <div class="playerOneGlobalScore">
+              <p>43</p>
+              <img
+                src="assets/img/faceFive.png"
+                alt="dice face"
+                width="120"
+                class="dice"
+              />
+            </div>
+          </div>
+          <div class="bottomPart">
+            <div class="tempScore">
+              <p>CURRENT</p>
+              <p class="currentScors">11</p>
+            </div>
+          </div>
+        </div>
+        <div class="playerTwoSide col-md-6">
+          <div class="topPart">
+            <h2 class="playerTwo">PLAYER 2</h2>
+            <div class="playerTwoGlobalScore">
+              <p>72</p>
+              <img
+                src="assets/img/faceFive.png"
+                alt="dice face"
+                width="120"
+                class="dice"
+              />
+            </div>
+          </div>
+          <div class="bottomPart">
+            <div class="tempScore">
+              <p>CURRENT</p>
+              <p class="currentScors">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="featuresGame">
+        <button class="roll mb-4">
+          <span class="material-symbols-outlined mx-2"> cached </span> ROLL DICE
+        </button>
+        <button class="hold">
+          <span class="material-symbols-outlined mx-2"> download</span> HOLD
+        </button>
+      </div>
+    </div>
     <!--bootstrap and custom js-->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

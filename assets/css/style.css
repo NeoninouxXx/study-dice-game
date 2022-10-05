@@ -1,0 +1,145 @@
+.playerOneSide {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(211, 211, 211, 0.432);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.playerTwoSide {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.newGame {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 8%;
+  font-size: 30px !important;
+  font-weight: 300;
+}
+.material-symbols-rounded {
+  font-family: "Lato", sans-serif;
+  font-size: 40px !important;
+  color: rgba(196, 0, 0, 0.767);
+  margin-right: 15px;
+}
+
+.topPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.playerOne {
+  font-size: 55px;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+}
+.playerTwo {
+  font-size: 55px;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+}
+
+.playerOneGlobalScore,
+.playerTwoGlobalScore {
+  color: rgba(196, 0, 0, 0.767);
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  box-shadow: 1px 1px 5px black;
+}
+.tempScore {
+  width: 180px;
+  background-color: rgba(196, 0, 0, 0.767);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.currentScors {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 0px;
+}
+
+.material-symbols-outlined {
+  color: rgba(196, 0, 0, 0.767);
+
+  font-size: 30px !important;
+}
+
+.featuresGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 23%;
+}
+.roll,
+.hold {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+}
+
+/* responsive*/
+
+@media (max-width: 767px) {
+  .newGame {
+    font-size: 20px !important;
+  }
+  .playerOne,
+  .playerTwo {
+    font-size: 35px;
+  }
+  .playerOneGlobalScore,
+  .playerTwoGlobalScore {
+    font-size: 50px;
+  }
+  .playerOneSide,
+  .playerTwoSide {
+    justify-content: center;
+  }
+  .dice {
+    top: 95%;
+    width: 85px;
+  }
+
+  .hold,
+  .roll {
+    font-size: 25px;
+  }
+  .featuresGame {
+    bottom: 10%;
+  }
+}
