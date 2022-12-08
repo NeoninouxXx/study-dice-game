@@ -24,20 +24,24 @@ function reset() {
   playerTwoFinalScore.textContent = 0;
   playerOneCurrentScore.textContent = 0;
   playerTwoCurrentScore.textContent = 0;
-  zIndex = 0;
+  newFinalPlayerTwoScore = 0;
+  newFinalPlayerTwoScore = 0;
+
+  playerOneTunr = true;
+  zIndex = 0
 
   alert("Nouvelle partie!");
 }
 
 function newTurn() {
   const diceNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-  
 
   displayDice(diceNumber);
   if (playerOneTunr) {
     if (diceNumber == 1) {
       playerOneCurrentScore.textContent = 0;
       playerOneTunr = !playerOneTunr;
+      newPlayerOneCurrentScore = 0;
     } else {
       newPlayerOneCurrentScore = newPlayerOneCurrentScore + diceNumber;
       playerOneCurrentScore.textContent = `${newPlayerOneCurrentScore}`;
@@ -46,6 +50,7 @@ function newTurn() {
     if (diceNumber == 1) {
       playerTwoCurrentScore.textContent = 0;
       playerOneTunr = !playerOneTunr;
+      newPlayerTwoCurrentScore = 0;
     } else {
       newPlayerTwoCurrentScore = newPlayerTwoCurrentScore + diceNumber;
       playerTwoCurrentScore.textContent = `${newPlayerTwoCurrentScore}`;
@@ -93,13 +98,30 @@ function updatePlayerFinalScore() {
     newFinalPlayerOneScore = newFinalPlayerOneScore + newPlayerOneCurrentScore;
     playerOneFinalScore.textContent = `${newFinalPlayerOneScore}`;
     newPlayerOneCurrentScore = 0;
-    playerOneTunr = !playerOneTunr;
+
     playerOneCurrentScore.textContent = 0;
+    if (newFinalPlayerOneScore >= 100) {
+      winner(playerOneTunr, newFinalPlayerOneScore);
+    }
+    playerOneTunr = !playerOneTunr;
   } else {
     newFinalPlayerTwoScore = newFinalPlayerTwoScore + newPlayerTwoCurrentScore;
     playerTwoFinalScore.textContent = `${newFinalPlayerTwoScore}`;
     newPlayerTwoCurrentScore = 0;
-    playerOneTunr = !playerOneTunr;
+
     playerTwoCurrentScore.textContent = 0;
+    if (newFinalPlayerTwoScore >= 100) {
+      winner(playerOneTunr, newFinalPlayerTwoScore);
+    }
+    playerOneTunr = !playerOneTunr;
   }
+}
+
+function winner(player, score) {
+  if (player) {
+    alert(`félicitation joueur 1 gagne avec un total de ${score} points`);
+  } else {
+    alert(`félicitation joueur 2 gagne avec un total de ${score} points`);
+  }
+  reset();
 }
